@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import Hbcbd
+from home.models import Dog, Hbcbd
 from django.http import HttpRequest
 from django.utils.translation import gettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -81,4 +81,11 @@ class HbcbdSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Hbcbd
+        fields = "__all__"
+
+
+class DogSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Dog
         fields = "__all__"
