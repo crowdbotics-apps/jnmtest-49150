@@ -6,6 +6,24 @@ const jnmtestAPI = axios.create({
 function api_docs_schema_retrieve(payload) {
   return jnmtestAPI.get(`/api-docs/schema/`, { params: { lang: payload.lang } })
 }
+function api_v1_dog_list(payload) {
+  return jnmtestAPI.get(`/api/v1/dog/`)
+}
+function api_v1_dog_create(payload) {
+  return jnmtestAPI.post(`/api/v1/dog/`, payload)
+}
+function api_v1_dog_retrieve(payload) {
+  return jnmtestAPI.get(`/api/v1/dog/${payload.id}/`)
+}
+function api_v1_dog_update(payload) {
+  return jnmtestAPI.put(`/api/v1/dog/${payload.id}/`, payload)
+}
+function api_v1_dog_partial_update(payload) {
+  return jnmtestAPI.patch(`/api/v1/dog/${payload.id}/`, payload)
+}
+function api_v1_dog_destroy(payload) {
+  return jnmtestAPI.delete(`/api/v1/dog/${payload.id}/`)
+}
 function api_v1_hbcbd_list(payload) {
   return jnmtestAPI.get(`/api/v1/hbcbd/`)
 }
@@ -65,6 +83,12 @@ function rest_auth_user_partial_update(payload) {
 }
 export const apiService = {
   api_docs_schema_retrieve,
+  api_v1_dog_list,
+  api_v1_dog_create,
+  api_v1_dog_retrieve,
+  api_v1_dog_update,
+  api_v1_dog_partial_update,
+  api_v1_dog_destroy,
   api_v1_hbcbd_list,
   api_v1_hbcbd_create,
   api_v1_hbcbd_retrieve,
