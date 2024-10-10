@@ -17,9 +17,7 @@ jobs:
     executor: python-executor
     steps:
       - checkout
-      - setup_remote_docker:
-          version: 20.10.7
-          docker_layer_caching: true
+      - setup_remote_docker
       - run:
           name: Install Azure CLI
           command: |
