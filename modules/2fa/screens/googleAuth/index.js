@@ -26,7 +26,7 @@ const GoogleAuth = () => {
         Linking.openURL(link);
       }
     }
-  };
+  }
 
   useEffect(() => {
     setLink(route.params.link);
