@@ -22,7 +22,6 @@ jobs:
           name: Install Azure CLI
           command: |
             curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-      
       - run:
           name: Build Docker image
           command: docker build -t "$AZURE_REGISTRY_NAME.azurecr.io/$AZURE_APP_NAME:latest" --build-arg SECRET_KEY="build" "."
